@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20210828 김유민</title>
+</head>
+<body>
+<h2>취업 정보 계정 만들기</h2>
+<form>
+    * 필수 입력 항목<br>
+    <p>기본 정보</p>
+    이름*<input type="text" value="" maxlength="8"><br>
+    이메일*<input type="email" placeholder="id@domain_name"  maxlength="15"><br>
+    암호*<input type="text" value="" maxlength="12"><br>
+    암호 확인<input type="text" value="" maxlength="12"><br>
+    모바일 폰*<input type="tel" placeholder="010-0000-0000" maxlength="13"><br>
+    개인 홈페이지<input type="url" placeholder="http://" maxlength="30"><br>
+    주소*<input type="text" value="" maxlength="30"><br>
+    <p>학력</p>
+    학교 명*<input type="text" value="" maxlength="12"><br>
+    전공*<input type="text" value="" maxlength="12"><br>
+    졸업 여부*<select name="--선택--">
+    <option value="1">--선택--</option>
+    <option value="2">졸업예정</option>
+    <option value="3">졸업</option>
+</select><br>
+    졸업(예정)일<input type="date" value=""><br>
+    <p>업무 경력</p>
+    근무업체명<input type="text" value="" maxlength="20"><br>
+    직위<input type="text" value="" maxlength="10"><br>
+    담당 업무<textarea cols="80" rows="10">
+    이전 업체에서 담당한 업무를 기술하시오.
+</textarea>
+    <br>
+    근무년수<input type="number" min="0" max="10" step="0.5">년<br>
+    <p>자기소개서</p>
+    첨부파일<input type="file" value="파일 선택"><br>
+    <input type="submit" value="제출">
+    <input type="reset" value="재작성"><br>
+</form>
+</body>
+</html>
