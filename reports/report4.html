@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>과제 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-sm mt=5">
+    <div class="h3">2진수 변환기</div>
+    <div class="mb-3">
+        <label class="form-label test-primary"> 2진수:
+            <input type="text" id="digit" size="20">
+        </label>
+        <button type="button" class="btn btn-dark" id="transformBtn"> ===> </button>
+        <label class="form-label text-primary"> 16진수:
+            <input type="text" id="hexanum" size="20" readonly value="">
+        </label>
+    </div>
+    <hr>
+    <div class="h3">파스칼 삼각형</div>
+    <div class="mb-3">
+        <label class="form-label text-primary"> 삼각형 높이
+            <input type="number" id="size" min="1" max="20" step="1" value="1">
+            <button type="button" class="btn btn-success" id="pascalBtn">그리기</button>
+        </label>
+    </div>
+    <div class="text-bg-secondary" id="draw_area">
+    </div>
+</div>
+</body>
+    <script>
+      document.getElementById('transformBtn').addEventListener('click', function() {
+         transform();
+      });
+        function transform(){
+            var num = document.getElementById("digit").value;
+            num = parseInt(num, 2);
+            var hex = num.toString(16);
+
+            document.getElementById("hexanum").value=hex;
+        }
+      document.getElementById('pascalBtn').addEventListener('click', function () {
+          pascal();
+      });
+         function pascalTriangle(row, col) {
+             if ( col === 0) {
+                 return 1;
+             }
+             else if (row === 0) {
+                 return 0;
+             }
+             else {
+                 return pascalTriangle(row -1, col) + pascalTriangle(row - 1, col - 1);
+             }
+         }
+
+        function pascal(){
+            var n = document.getElementById("size").value;
+            var i=1;
+            var col=0;
+            while (i<=n) {
+                col = 0
+                while (col <= i - 1) {
+                    document.getElementById("draw_area").value=pascalTriangle(i - 1, col) + "&nbsp";
+                    col++;
+                }
+                document.getElementById("draw_area").value="<br>";
+                i++;
+            }
+        }
+    </script>
+</html>
