@@ -57,17 +57,17 @@
              }
          }
 
-        function pascal(){
+        function pascal() {
             var n = document.getElementById("size").value;
-            var i=1;
-            var col=0;
-            while (i<=n) {
+            var i = 1;
+            var col = 0;
+            while (i <= n) {
                 col = 0
                 while (col <= i - 1) {
-                    document.getElementById("draw_area").value=pascalTriangle(i - 1, col) + "&nbsp";
+                    document.getElementById("draw_area").innerHTML = document.getElementById("draw_area").innerHTML + pascalTriangle(i - 1, col) + "&nbsp";
                     col++;
                 }
-                document.getElementById("draw_area").value="<br>";
+                document.getElementById("draw_area").innerHTML = document.getElementById("draw_area").innerHTML + "<br>";
                 i++;
             }
         }
